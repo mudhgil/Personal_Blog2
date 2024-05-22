@@ -1,0 +1,18 @@
+<!-- detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <article>
+        <h1>{{ object.title }}</h1>
+        <p>Published on: {{ object.published_on|date:'D M Y H:i' }}</p>
+        <hr>
+        <div>{{ object.content }}</div>
+      </article>
+    </div>
+  </div>
+</div>
+{% endblock %}

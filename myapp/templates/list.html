@@ -1,0 +1,17 @@
+<!-- list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="centerstage">
+  {% for blog in object_list %}
+    <h1><a href="{% url 'detail' pk=blog.pk %}">{{ blog.title }}</a></h1>
+    <div class="text-end mt-3">
+    <p>Published on: {{ blog.published_on|date:'l, F j, Y H:i' }}</p>
+</div>
+    <hr>
+  {% empty %}
+    <p>No blogs found.</p>
+  {% endfor %}
+</div>
+{% endblock %}
